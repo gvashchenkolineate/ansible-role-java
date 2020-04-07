@@ -10,6 +10,11 @@
     - ansible_distribution == 'Ubuntu'
     - ansible_distribution_version == '18.04'
 
+- name: Add apt repo for OpenJdk
+  apt_repository:
+    repo: 'ppa:openjdk-r/ppa'
+    update_cache: true
+
 - name: Ensure Java is installed.
   apt:
     name: "{{ java_packages }}"
